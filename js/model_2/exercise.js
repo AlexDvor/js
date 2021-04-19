@@ -12,20 +12,61 @@
 
 // // ---------------------------------------------------------------------
 
-const country = ['Украина', 'Америка', 'Италия', 'Германия', 'Португалия']
-const firstElementIndex = country[0];
-const lastElementIndex = country[country.length - 1];
-const resultIndex = firstElementIndex lastElementIndex;
+// Напиши скрипт поиска самого маленького числа в масиве, при условие что числа не повторяються.
 
 
-console.log(resultIndex)
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
 
-
+// for (const number of numbers) {
+//     if (number < smallestNumber) {
+//         smallestNumber = number;
+//     }
+// }
+//    console.log('Найменше число : ',  smallestNumber);
 
 
 
 
 // ---------------------------------------------------------------------
+
+//   Напиши функцию calculateTotalPrice(items)
+// которая принимает массив цен(чисел) и возвращает их сумму
+
+// Option 1
+
+
+// const cart = [54, 26, 155, 70, 355, 200, 10, 50, 60, 90, 12, 30];
+// const cart = [50, 50];
+// let total = 0;
+
+// for (const value of cart) {
+//     // total = total + value;
+//     total += value;
+// }
+// console.log('Total: ', total);
+
+
+
+// Option 2
+
+
+// const calculateTotalPrice = function (items) {
+//     let total = 0;
+
+//     for (const item of items) {
+//         total += item;
+//     }
+//     return total;
+// }
+
+// const res = calculateTotalPrice([2, 2, 2, 2])
+// console.log(`Общая сумма покупок: ${res}`,)
+
+
+
+
+
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
