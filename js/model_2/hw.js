@@ -239,18 +239,18 @@
 
 
 
-function makeStringFromArray(array, delimeter) {
+// function makeStringFromArray(array, delimeter) {
 
-  let string;
+//   let string;
 
- string =array.join(`${delimeter}`);
+//  string =array.join(`${delimeter}`);
  
 
-  return string;
+//   return string;
 
-}
+// }
 
-console.log(makeStringFromArray(['bla','papa','mama','brother'],'*'))
+// console.log(makeStringFromArray(['bla','papa','mama','brother'],'*'))
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
