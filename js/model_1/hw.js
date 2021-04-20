@@ -433,10 +433,9 @@
 
 
 
-
 // function checkForSpam(message) {
 //   let result;
-//   const normalize = message.toUpperCase() && message.toLowerCase(); 
+//   const normalize = message.toLowerCase(); 
   
 //   if (normalize.includes('spam')) {
 //       result = true;
@@ -449,9 +448,9 @@
 //   result = false;
 //   }
  
-
 //   return result;
 // }
+
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
