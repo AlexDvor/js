@@ -194,19 +194,64 @@
 
 
 
-function calculateEngravingPrice(message, pricePerWord) {
-  let totalPrice = 0;
-  let words;
+// function calculateEngravingPrice(message, pricePerWord) {
+//   let totalPrice = 0;
+//   let words;
 
-    words = message.split(' ');
-    totalPrice = words.length * pricePerWord;
+//     words = message.split(' ');
+//     totalPrice = words.length * pricePerWord;
    
-    return totalPrice;
- }
+//     return totalPrice;
+//  }
 
-console.log(calculateEngravingPrice('Bla bla bla',5))
+// console.log(calculateEngravingPrice('Bla bla bla',5))
+
+
 // ---------------------------------------------------------------------
+
+// Метод массива join()
+// Метод массивов join(delimeter) позволяет соединить элементы массива в строку. В строке элементы будут разделены символом или группой символов указанных в delimeter. То есть это операция обратная методу строк split(delimeter).
+
+// const words = ['JavaScript', 'это', 'интересно'];
+// console.log(words.join('')); // 'JavaScriptэтоинтересно'
+// console.log(words.join(' ')); // 'JavaScript это интересно'
+// console.log(words.join('*')); // 'JavaScript*это*интересно'
+// Задание
+// Дополни код функции makeStringFromArray(array, delimeter) так, чтобы она возвращала в переменной string результат соединения элементов массива array c разделителем delimeter - строку.
+
+
 // ---------------------------------------------------------------------
+// Метод массива join()
+// Метод массивов join(delimeter) позволяет соединить элементы массива в строку. В строке элементы будут разделены символом или группой символов указанных в delimeter. То есть это операция обратная методу строк split(delimeter).
+
+// const words = ['JavaScript', 'это', 'интересно'];
+// console.log(words.join('')); // 'JavaScriptэтоинтересно'
+// console.log(words.join(' ')); // 'JavaScript это интересно'
+// console.log(words.join('*')); // 'JavaScript*это*интересно'
+// Задание
+// Дополни код функции makeStringFromArray(array, delimeter) так, чтобы она возвращала в переменной string результат соединения элементов массива array c разделителем delimeter - строку.
+
+// Тесты
+// Объявлена функция makeStringFromArray(array, delimeter).
+// Вызов makeStringFromArray(['Манго', 'спешит', 'на', 'поезд'], ' ') возвращает 'Манго спешит на поезд'.
+// Вызов makeStringFromArray(['М', 'а', 'н', 'г', 'о'], '')) возвращает 'Манго'.
+// Вызов makeStringFromArray(['лучшее', 'за', 'неделю'], '_') возвращает 'лучшее_за_неделю'.
+
+
+
+function makeStringFromArray(array, delimeter) {
+
+  let string;
+
+ string =array.join(`${delimeter}`);
+ 
+
+  return string;
+
+}
+
+console.log(makeStringFromArray(['bla','papa','mama','brother'],'*'))
+
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
