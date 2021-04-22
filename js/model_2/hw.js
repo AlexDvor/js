@@ -671,11 +671,16 @@
 // ------------------------------------------------------------------------------------------------------------------------------------------
 // Общие элементы
 // Задание
-// Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
+// Общими элементами массивов называют те элементы, которые присутствуют во 
+// всех массивах.
 
-// Например, в двух массивах [1, 3, 5] и [0, 8, 5, 3] общими будут числа 3 и 5, т.к. они присутствуют в обоих исходных массивах. А числа 0, 1 и 8 присутствуют только в одном из массивов.
+// Например, в двух массивах [1, 3, 5] и [0, 8, 5, 3] 
+// общими будут числа 3 и 5, т.к.они присутствуют в обоих исходных массивах.
+// А числа 0, 1 и 8 присутствуют только в одном из массивов.
 
-// Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины в параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов, которые присутствуют в обоих исходных массивах.
+// Напиши функцию getCommonElements(array1, array2) которая получает два 
+// массива произвольной длины в параметры array1 и array2, и возвращает новый 
+// массив, состоящий из тех элементов, которые присутствуют в обоих исходных массивах.
 
 // Тесты
 // Объявлена функция getCommonElements(array1, array2).
@@ -690,41 +695,161 @@
 
 // // -----------------------
 
-function getCommonElements(array1, array2) {
-  let unqElement = [];
 
-  for (const el of array1) {
-    const isInSecondArray = array2.includes(el);
-    if (!isInSecondArray) {
-      unqElement.push(el);
-    }
+// function getCommonElements(array1, array2) {
+//   let unqElement = [];
+
+//   for (const el of array1) {
+//     const isInSecondArray = array2.includes(el);
+//     if (isInSecondArray) {
+//       unqElement.push(el);
+//     }
  
-  }
+//   }
 
-  for (const el of array2) {
-    const isInSecondArray = array1.includes(el);
-    if (!isInSecondArray) {
-      unqElement.push(el);
-    }
+//   return unqElement;
+
+// }
+
+// const a = [1, 3, 5];
+// const b = [0, 8, 5, 3];
+
+// console.log(getCommonElements(a, b));
+
+
+// // -----------------------
+
+// function getCommonElements(array1, array2) {
+//   let unqElement = [];
+
+//   for (const el of array1) {
+//     const isInSecondArray = array2.includes(el);
+//     if (!isInSecondArray) {
+//       unqElement.push(el);
+//     }
  
-  }
-  return unqElement;
+//   }
 
-}
+//   for (const el of array2) {
+//     const isInSecondArray = array1.includes(el);
+//     if (!isInSecondArray) {
+//       unqElement.push(el);
+//     }
+ 
+//   }
+//   return unqElement;
 
-const a = [1, 3, 5];
-const b = [0, 8, 5, 3];
+// }
 
-console.log(getCommonElements(a, b)); 
+// const a = [1, 3, 5];
+// const b = [0, 8, 5, 3];
+
+// console.log(getCommonElements(a, b)); 
+
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------
+// Цикл for...of
+// Инструкция for...of объявляет цикл, перебирающий итерируемые объекты, такие как массивы и строки. Тело цикла будет выполняться для значения каждого элемента. Это хорошая замена циклу for, если не нужен доступ к счётчику итерации.
+
+// for (const variable of iterable) {
+//   // тело цикла
+// }
+// variable — переменная, которая будет хранить значение элемента на каждой итерации.
+// iterable — коллекция, которая имеет перечислимые элементы, например массив.
+// const planets = ['Земля', 'Марс', 'Венера'];
+
+// for (const planet of planets) {
+//   console.log(planet);
+// }
+// Задание
+// Выполни рефакторинг кода функции calculateTotalPrice(order) заменив цикл for на for...of.
+
+// Тесты
+// Объявлена функция calculateTotalPrice(order).
+// Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138.
+// Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503.
+// Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) возвращает 1116.
+// Вызов функции calculateTotalPrice([]) возвращает 0.
+// Вызов функции calculateTotalPrice() со случайным массивом чисел возвращает правильную сумму.
+// Редактор JavaScript:
+// 1
+// function calculateTotalPrice(order) {
+// 2
+//   let total = 0;
+// 3
+//   // Пиши код ниже этой строки
+// 4
+// ​
+// 5
+//   for (let i = 0; i < order.length; i += 1) {
+// 6
+//     total += order[i];
+// 7
+//   }
+// 8
+// ​
+// 9
+//   // Пиши код выше этой строки
+// 10
+//   return total;
+// 11
+// }
+// Проверить
+// Сбросить
+// Скрыть секцию результатов
+// Результаты:
+// (обновляются при нажатии на кнопку - Проверить)
 
 // -----------------------
 
-// ------------------------------------------------------------------------------------------------------------------------------------------
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+
+//   for (const item of order) {
+//     total += item;
+//   }
+
+//   return total;
+// }
+
+// const num = [5, 5];
+// console.log(calculateTotalPrice(num))
+
+// // ------------------------------------------------------------------------------------------------------------------------------------------
+
+// Фильтрация массива чисел 2.0
+// Задание
+// Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of.
+
+// Тесты
+// Объявлена функция filterArray(numbers, value).
+// Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5].
+// Вызов функции filterArray([1, 2, 3, 4, 5], 4) возвращает [5].
+// Вызов функции filterArray([1, 2, 3, 4, 5], 5) возвращает [].
+// Вызов функции filterArray([12, 24, 8, 41, 76], 38) возвращает [41, 76].
+// Вызов функции filterArray([12, 24, 8, 41, 76], 20) возвращает [24, 41, 76].
+// Вызов функции filterArray() со случайным массивом и числом возвращает правильный массив.
+// Функция calculateTotalPrice() использует цикл for..of.
+
 
 // -----------------------
+
+
+// function filterArray(numbers, value) {
+//   // Пиши код ниже этой строки
+//   const filteredNumbers = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+
+// }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------
 
