@@ -179,6 +179,8 @@
 //   return words;
 // }
 
+// const a = 'Manana me ire a la clase'
+// console.log(splitMessage(a, ' '));
 
 
 
