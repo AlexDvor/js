@@ -1064,9 +1064,9 @@
 // ];
 
 // function calculateTotalPrice(productName) {
-//   // Пиши код ниже этой строки
+//   
 //     for (const product of products) {
-//         // console.log(product)
+//         
 //         if (product.name === productName) {
 //             return  product.price*product.quantity;
 //         }
@@ -1650,6 +1650,7 @@
 // return find;
 
 // }
+
 
 // ------------------------------------------------------------------------------------------------------------------------------------------
 // Операция rest для сбора всех аргументов функции
