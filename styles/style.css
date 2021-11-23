@@ -1,0 +1,21 @@
+.container {
+  max-width: 265px;
+  margin: 30px auto;
+  background: #f1f1f1;
+  padding: 30px;
+}
+
+.slider {
+  width: 256px;
+  height: auto;
+  border: 2px solid black;
+  overflow: hidden;
+}
+.slider-line {
+  display: flex;
+
+  width: 1792px;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
+}
