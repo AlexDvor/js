@@ -81,14 +81,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 function findElement(arr, func) {
-  let num = 0;
   for (let i = 0; i < arr.length; i += 1) {
     if (func(arr[i])) {
-      return (num = arr[i]);
+      return arr[i];
     }
   }
 
-  return num;
+  return undefined;
 }
 
 console.log(
