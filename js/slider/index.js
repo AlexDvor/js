@@ -1,7 +1,8 @@
-let offset = 0; // position from left edge
 const sliderLineRef = document.querySelector('.slider-line');
 const nextBtnRef = document.querySelector('.slider-next');
 const prevBtnRef = document.querySelector('.slider-prev');
+
+let offset = 0; // position from left edge
 
 nextBtnRef.addEventListener('click', () => {
   offset += 256;
