@@ -1,21 +1,21 @@
 const chooseOptimalDistance = (distance, quantity, list) => {
+  if (list.length < quantity) return null;
   const subArray = creatSubarray(list, quantity);
   const totalSumArr = totalAmountArray(subArray);
   const result = compareDistance(totalSumArr, distance);
-
   return result;
 };
 
 function creatSubarray(arr, size) {
-  let subarray = [];
+  let subArray = [];
 
   for (let i = 0; i < arr.length; i += 1) {
-    subarray.push(arr.slice(i, i + size));
+    subArray.push(arr.slice(i, i + size));
   }
-  const result = subarray.filter(item => {
+  const result = subArray.filter(item => {
     if (item.length === size) return item;
   });
-
+  console.log('creatSubarray', result);
   return result;
 }
 
