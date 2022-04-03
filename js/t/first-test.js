@@ -2,8 +2,8 @@ const chooseOptimalDistance = (distance, quantity, list) => {
   // if (list.length < quantity) return null;
   // const subArray = creatSubarray(list, quantity);
   // const result = compareDistance(totalSumArr, distance);
-  // const a = totalAmountArray(result);
   const test = testFun(list);
+  const a = totalAmountArray(test);
 
   // const result = testA(list);
 
@@ -16,9 +16,11 @@ const newArr = [];
 
 function testFun(array) {
   for (let index = 0; index < array.length; index++) {
-    const b = array.slice(index, index + 3);
-    console.log('b:', b);
-    const a = [array[indexItem], array[secondElemet], array[index + 2]];
+    const a = [
+      array[indexItem],
+      array[secondElemet] || 0,
+      array[index + 2] || 0,
+    ];
     newArr.push(a);
   }
 
@@ -69,31 +71,28 @@ function compareDistance(arr, goal) {
   return result;
 }
 
-// function testA(arr) {
-//   let result = [];
+function testA(arr) {
+  let result = [];
 
-//   const permute = (arr, m = []) => {
-//     if (arr.length === 0) {
-//       result.push(m);
-//     } else {
-//       for (let i = 0; i < arr.length; i++) {
-//         let curr = arr.slice();
-//         // console.log('curr', curr);
-//         let next = curr.splice(i, 1);
-//         // console.log('next', next);
-//         permute(curr.slice(), m.concat(next));
-//       }
-//     }
-//   };
+  const permute = (arr, m = []) => {
+    if (arr.length === 0) {
+      result.push(m);
+    } else {
+      for (let i = 0; i < arr.length; i++) {
+        let curr = arr.slice();
+        // console.log('curr', curr);
+        let next = curr.splice(i, 1);
+        // console.log('next', next);
+        permute(curr.slice(), m.concat(next));
+      }
+    }
+  };
 
-//   permute(arr);
+  permute(arr);
 
-//   return result;
-// }
+  return result;
+}
 
 // console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
 // console.log(chooseOptimalDistance(174, 3, [1, 2, 3, 4])); //173)
-const a = [1, 2, 3, 4, 5];
-const b = a.slice(1, -1);
-console.log(b);
