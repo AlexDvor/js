@@ -2,10 +2,8 @@ const chooseOptimalDistance = (distance, quantity, list) => {
   // if (list.length < quantity) return null;
   // const subArray = creatSubarray(list, quantity);
   // const result = compareDistance(totalSumArr, distance);
-  const test = testFun(list);
+  const test = testA(list);
   const a = totalAmountArray(test);
-
-  // const result = testA(list);
 
   return test;
 };
@@ -80,9 +78,9 @@ function testA(arr) {
     } else {
       for (let i = 0; i < arr.length; i++) {
         let curr = arr.slice();
-        // console.log('curr', curr);
+
         let next = curr.splice(i, 1);
-        // console.log('next', next);
+
         permute(curr.slice(), m.concat(next));
       }
     }
