@@ -94,3 +94,5 @@ function testA(arr) {
 // console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
 // console.log(chooseOptimalDistance(174, 3, [1, 2, 3, 4])); //173)
+
+// https://stackoverflow.com/questions/9960908/permutations-in-javascript
