@@ -2,8 +2,8 @@ const chooseOptimalDistance = (distance, quantity, list) => {
   // if (list.length < quantity) return null;
   const subArray = creatSubarray(list, quantity);
   // const result = compareDistance(totalSumArr, distance);
-  const result = test(list);
-  const a = totalAmountArray(result);
+  // const result = test(list);
+  // const a = totalAmountArray(result);
 
   return subArray;
 };
