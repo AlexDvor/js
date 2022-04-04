@@ -1,8 +1,8 @@
 const chooseOptimalDistance = (distance, quantity, list) => {
-  const test = creatCollection(list, quantity);
-  const sum = totalAmountArray(test);
-  const comp = compareDistance(sum, distance);
-  return comp;
+  const collection = creatCollection(list, quantity);
+  const total = totalAmountArray(collection);
+  const result = compareDistance(total, distance);
+  return result;
 };
 
 function creatCollection(arr, length) {
@@ -43,17 +43,15 @@ function filterArr(arr) {
   return newArr;
 }
 
-function compareDistance(arr, goal) {
-  const result = arr.reduce((prev, curr) => {
-    return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
-  });
-  if (result > sum && presum <= t) sum = presum;
-  return result;
+function compareDistance(items, goal) {
+  let distance = 0;
+  for (let item of items) {
+    if (item > distance && item <= goal) distance = item;
+  }
+  return distance || null;
 }
 
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
-
-// https://stackoverflow.com/questions/9960908/permutations-in-javascript
 
 ///////////////////////////////////////////////////////////////
 
