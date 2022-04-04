@@ -1,48 +1,32 @@
 const chooseOptimalDistance = (distance, quantity, list) => {
-  // if (list.length < quantity) return null;
-  // const subArray = creatSubarray(list, quantity);
-  // const result = compareDistance(totalSumArr, distance);
-  const test = testA(list);
-  const a = totalAmountArray(test);
-
-  return test;
+  const test = creatCollection(list, quantity);
+  const sum = totalAmountArray(test);
+  const comp = compareDistance(sum, distance);
+  return comp;
 };
 
-let indexItem = 0;
-let secondElemet = 1;
-const newArr = [];
+function creatCollection(arr, length) {
+  const results = new Map();
 
-function testFun(array) {
-  for (let index = 0; index < array.length; index++) {
-    const a = [
-      array[indexItem],
-      array[secondElemet] || 0,
-      array[index + 2] || 0,
-    ];
-    newArr.push(a);
-  }
+  const recurs = (size, j) => {
+    if (size)
+      arr.forEach((el, i) => {
+        const m = new Map(j);
+        m.set(i, el);
+        recurs(size - 1, m);
+      });
+    else if (j.size === length) {
+      const keys = Array.from(j.keys()).sort();
+      const value = Array.from(j.values()).sort();
+      results.set(keys, value);
+    }
+  };
 
-  indexItem += 1;
-  secondElemet += 1;
-  if (indexItem === array.length) return;
+  recurs(length, new Map());
 
-  testFun(array);
+  const newArr = filterArr(results);
 
   return newArr;
-}
-
-function creatSubarray(arr, size) {
-  let subArray = [];
-
-  for (let i = 0; i < arr.length; i += 1) {
-    subArray.push(arr.slice(i, i + size));
-  }
-
-  // const result = subArray.filter(item => {
-  //   if (item.length === size) return item;
-  // });
-  // console.log('creatSubarray', result);
-  return subArray;
 }
 
 function totalAmountArray(arr) {
@@ -53,46 +37,60 @@ function totalAmountArray(arr) {
   return result;
 }
 
-function filterArr(arr, size) {
-  const res = arr.filter(item => {
-    if (item.length === size) return item;
-  });
-
-  return res;
+function filterArr(arr) {
+  const newArr = [];
+  arr.forEach(value => newArr.push(value));
+  return newArr;
 }
 
 function compareDistance(arr, goal) {
   const result = arr.reduce((prev, curr) => {
     return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
   });
-
+  if (result > sum && presum <= t) sum = presum;
   return result;
 }
 
-function testA(arr) {
-  let result = [];
-
-  const permute = (arr, m = []) => {
-    if (arr.length === 0) {
-      result.push(m);
-    } else {
-      for (let i = 0; i < arr.length; i++) {
-        let curr = arr.slice();
-
-        let next = curr.splice(i, 1);
-
-        permute(curr.slice(), m.concat(next));
-      }
-    }
-  };
-
-  permute(arr);
-
-  return result;
-}
-
-// console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
 console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61])); //173)
-// console.log(chooseOptimalDistance(174, 3, [1, 2, 3, 4])); //173)
 
 // https://stackoverflow.com/questions/9960908/permutations-in-javascript
+
+///////////////////////////////////////////////////////////////
+
+// const chooseBestDistance = (t, k, ls) => {
+//   let sum = 0;
+//   const results = new Map();
+//   const recurs = (n, j) => {
+//     if (n)
+//       ls.forEach((el, i) => {
+//         const m = new Map(j);
+//         m.set(i, el);
+//         recurs(n - 1, m);
+//       });
+//     else if (j.size === k) {
+//       const keys = Array.from(j.keys()).sort().join('');
+//       const vals = Array.from(j.values());
+//       results.set(keys, vals);
+//     }
+//   };
+
+//   recurs(k, new Map());
+
+//   console.log(
+//     'Variants:',
+//     Array.from(results.keys()).join(),
+//     '\nTotal:',
+//     results.size,
+//   );
+
+//   for (let value of results.values()) {
+//     const presum = value.reduce((acc, el) => (acc += el), 0);
+//     if (presum > sum && presum <= t) sum = presum;
+//   }
+
+//   return sum || null;
+// };
+
+// console.time('sum');
+// console.log(chooseBestDistance(1749, 4, [51, 56, 58, 59, 61, 1277, 677]));
+// console.timeEnd('sum');
